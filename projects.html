@@ -1,16 +1,60 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
-<link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Projects | Owen O’Brien</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 
-<body style="overflow:auto; background:#0f172a; padding:40px;">
+<body class="bg-sub">
+  <header class="nav">
+    <a class="brand" href="index.html">Owen O’Brien</a>
+    <nav class="nav-links">
+      <a href="about.html">About Me</a>
+      <a class="active" href="projects.html">Projects</a>
+      <a href="goals.html">Goals</a>
+    </nav>
+  </header>
 
-<h1>Projects</h1>
-<p>Your projects go here.</p>
+  <main class="page">
+    <section class="card">
+      <h1>Projects</h1>
+      <p class="muted">A few highlights. (We can add images + detailed pages next.)</p>
 
-<a href="index.html">← Back</a>
+      <div class="grid">
+        <article class="project">
+          <h3>Laser-Cut Box Generator</h3>
+          <p>Parametric SVG generator with kerf/thickness compensation and press-fit design.</p>
+          <div class="links">
+            <a href="https://github.com/ownobrn" target="_blank" rel="noopener">Code →</a>
+          </div>
+        </article>
 
+        <article class="project">
+          <h3>Procedural Lattice Lampshade</h3>
+          <p>OpenSCAD generator tuned for printability and aesthetics.</p>
+          <div class="links">
+            <a href="https://github.com/ownobrn" target="_blank" rel="noopener">Code →</a>
+          </div>
+        </article>
+
+        <article class="project">
+          <h3>Robotics / Kinematics Work</h3>
+          <p>Planar manipulator kinematics, Jacobians, and control exploration.</p>
+          <div class="links">
+            <a href="#" onclick="return false;">Coming soon</a>
+          </div>
+        </article>
+      </div>
+
+      <div class="spacer"></div>
+      <a class="btn" href="index.html">← Back home</a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    © 2026 Owen O’Brien
+  </footer>
 </body>
 </html>
-
