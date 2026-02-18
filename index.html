@@ -1,181 +1,41 @@
 <!doctype html>
 <html>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Owen O’Brien</title>
 
-<title>Owen O’Brien | Portfolio</title>
-<h1 class="title">Owen O’Brien — LIVE VERSION ✅</h1>
-
-<style>
-  .btn {
-  background: #1f2933;
-  padding: 12px 18px;
-  border-radius: 10px;
-  text-decoration: none;
-  color: #e5e7eb;
-  font-weight: 500;
-  transition: background 0.2s ease, transform 0.1s ease;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.btn:hover {
-  background: #334155;
-  transform: translateY(-2px);
-}
-
-* { box-sizing: border-box; }
-
-body {
-  margin: 0;
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-  background: #0f172a;
-  color: #e5e7eb;
-}
-
-/* Header */
-header {
-  text-align: center;
-  padding: 80px 20px 40px;
-}
-
-header h1 {
-  font-size: 48px;
-  margin: 0;
-}
-
-header p {
-  color: #94a3b8;
-  font-size: 18px;
-}
-
-/* Section */
-section {
-  max-width: 1100px;
-  margin: auto;
-  padding: 40px 20px;
-}
-
-h2 {
-  font-size: 28px;
-  margin-bottom: 20px;
-}
-
-/* Project grid */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 20px;
-}
-
-/* Card */
-.card {
-  background: #1f2933;
-  padding: 20px;
-  border-radius: 16px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.4);
-}
-
-.card h3 {
-  margin-top: 0;
-}
-
-.card p {
-  color: #9ca3af;
-}
-
-/* Links */
-a {
-  color: #38bdf8;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-/* Footer */
-footer {
-  text-align: center;
-  padding: 40px 20px;
-  color: #64748b;
-  font-size: 14px;
-}
-</style>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/three@0.158/build/three.min.js"></script>
 </head>
 
 <body>
+  <!-- DEPLOY PROOF: CINEMATIC HOME -->
 
-<header>
-  <h1>Owen O’Brien</h1>
-  <p>Mechanical Engineering Portfolio · CAD · Python · Manufacturing</p>
-</header>
+  <canvas id="bg"></canvas>
 
-<section>
-  <h2>Featured Projects</h2>
+  <div class="overlay">
+    <div class="hero">
+      <div class="badge">Columbia ME · Portfolio</div>
 
-  <div class="grid">
+      <h1 class="title">Owen O’Brien</h1>
+      <p class="subtitle">Mechanical Design · Manufacturing · Computational Tools</p>
 
-    <div class="card">
-      <h3>Laser-Cut Box Generator</h3>
-      <p>Parametric SVG generator with kerf compensation and press-fit design.</p>
-      <a href="https://github.com/ownobrn">View project →</a>
+      <div class="menu">
+        <a class="pill" href="about.html">About Me</a>
+        <a class="pill" href="projects.html">Projects</a>
+        <a class="pill" href="goals.html">Goals</a>
+      </div>
+
+      <div class="contact">
+        <a href="mailto:ojo2011@columbia.edu">ojo2011@columbia.edu</a>
+        <span class="dot">•</span>
+        <a href="https://www.linkedin.com/in/obrien-owen/" target="_blank">LinkedIn</a>
+      </div>
     </div>
-
-    <div class="card">
-      <h3>Procedural Lampshade</h3>
-      <p>OpenSCAD lattice generator optimized for 3D printing constraints.</p>
-      <a href="https://github.com/ownobrn">View project →</a>
-    </div>
-
-    <div class="card">
-      <h3>Robotics Simulation</h3>
-      <p>Planar manipulator kinematics and control analysis in MATLAB.</p>
-      <a href="#">View project →</a>
-    </div>
-
   </div>
-</section>
 
-<section>
-  <h2>About</h2>
-  <p>
-    Master’s student in Mechanical Engineering at Columbia University.
-    Focused on mechanical design, manufacturing systems, and computational tools.
-  </p>
-</section>
-
-<section>
-  <h2>Contact</h2>
-
-  <div style="display:flex; gap:20px; flex-wrap:wrap;">
-
-    <a href="mailto:ojo2011@columbia.edu" class="btn">
-      <i class="fa-solid fa-envelope"></i> Email
-    </a>
-
-    <a href="https://github.com/ownobrn" target="_blank" class="btn">
-      <i class="fa-brands fa-github"></i> GitHub
-    </a>
-
-    <a href="www.linkedin.com/in/obrien-owen/" target="_blank" class="btn">
-      <i class="fa-brands fa-linkedin"></i> LinkedIn
-    </a>
-
-  </div>
-</section>
-
-<footer>
-  © 2026 Owen O’Brien
-</footer>
-
+  <script src="script.js"></script>
 </body>
 </html>
+
