@@ -1,24 +1,48 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Owen O’Brien</title>
-
-<link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>NYC Skyline</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
-
 <body>
+  <main class="hero">
+    <div class="hero-content">
+      <h1>New York City</h1>
+      <p>Skyline vibes, clean UI.</p>
+      <button id="cta">Explore</button>
+    </div>
 
-<canvas id="bg"></canvas>
+    <!-- Skyline pinned to bottom -->
+    <div class="skyline" aria-hidden="true">
+      <!-- Back layer (slower parallax) -->
+      <svg class="sky skyline-back" viewBox="0 0 1200 240" preserveAspectRatio="none">
+        <path d="M0 220 L0 180 L40 180 L40 160 L70 160 L70 190 L110 190 L110 120 L150 120 L150 170
+                 L190 170 L190 140 L230 140 L230 190 L270 190 L270 90 L310 90 L310 210
+                 L360 210 L360 150 L410 150 L410 200 L450 200 L450 130 L500 130 L500 210
+                 L560 210 L560 110 L600 110 L600 210 L650 210 L650 60 L690 60 L690 210
+                 L750 210 L750 140 L790 140 L790 210 L850 210 L850 100 L900 100 L900 210
+                 L960 210 L960 150 L1000 150 L1000 210 L1060 210 L1060 130 L1120 130 L1120 210
+                 L1200 210 L1200 240 L0 240 Z"></path>
+      </svg>
 
-<div class="overlay">
-  <h1 class="title">Owen O’Brien</h1>
-</div>
+      <!-- Front layer (faster parallax) -->
+      <svg class="sky skyline-front" viewBox="0 0 1200 240" preserveAspectRatio="none">
+        <path d="M0 240 L0 205 L30 205 L30 155 L70 155 L70 220 L110 220 L110 105 L150 105 L150 195
+                 L190 195 L190 145 L220 145 L220 220 L260 220 L260 75 L305 75 L305 230
+                 L360 230 L360 130 L405 130 L405 210 L445 210 L445 115 L495 115 L495 230
+                 L550 230 L550 95 L590 95 L590 230 L640 230 L640 40 L680 40 L680 230
+                 L715 230 L715 160 L755 160 L755 230 L815 230 L815 80 L865 80 L865 230
+                 L930 230 L930 140 L975 140 L975 230 L1040 230 L1040 115 L1090 115 L1090 230
+                 L1200 230 L1200 240 Z"></path>
+      </svg>
+    </div>
+  </main>
 
-<script type="module" src="script.js"></script>
-
+  <script src="script.js"></script>
 </body>
 </html>
+
 
 
