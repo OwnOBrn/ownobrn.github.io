@@ -1,44 +1,180 @@
 <!doctype html>
 <html>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <head>
-  <meta charset="utf-8">
-  <title>Owen O’Brien Portfolio</title>
-  <style>
-    body {
-      font-family: Arial;
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 20px;
-      line-height: 1.6;
-      background: #f9f9f9;
-    }
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-    .card {
-      background: white;
-      padding: 20px;
-      border-radius: 12px;
-      margin: 20px 0;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-  </style>
+<title>Owen O’Brien | Portfolio</title>
+
+<style>
+  .btn {
+  background: #1f2933;
+  padding: 12px 18px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #e5e7eb;
+  font-weight: 500;
+  transition: background 0.2s ease, transform 0.1s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn:hover {
+  background: #334155;
+  transform: translateY(-2px);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  background: #0f172a;
+  color: #e5e7eb;
+}
+
+/* Header */
+header {
+  text-align: center;
+  padding: 80px 20px 40px;
+}
+
+header h1 {
+  font-size: 48px;
+  margin: 0;
+}
+
+header p {
+  color: #94a3b8;
+  font-size: 18px;
+}
+
+/* Section */
+section {
+  max-width: 1100px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+/* Project grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+/* Card */
+.card {
+  background: #1f2933;
+  padding: 20px;
+  border-radius: 16px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+}
+
+.card h3 {
+  margin-top: 0;
+}
+
+.card p {
+  color: #9ca3af;
+}
+
+/* Links */
+a {
+  color: #38bdf8;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 40px 20px;
+  color: #64748b;
+  font-size: 14px;
+}
+</style>
 </head>
 
 <body>
 
-<h1>Owen O’Brien</h1>
-<p>Mechanical Engineering Portfolio</p>
+<header>
+  <h1>Owen O’Brien</h1>
+  <p>Mechanical Engineering Portfolio · CAD · Python · Manufacturing</p>
+</header>
 
-<div class="card">
-  <h2>Project 1</h2>
-  <p>Laser-cut parametric box generator in Python.</p>
-</div>
+<section>
+  <h2>Featured Projects</h2>
 
-<div class="card">
-  <h2>Project 2</h2>
-  <p>Procedural lattice lampshade in OpenSCAD.</p>
-</div>
+  <div class="grid">
 
-<p>Contact: your@email.com</p>
+    <div class="card">
+      <h3>Laser-Cut Box Generator</h3>
+      <p>Parametric SVG generator with kerf compensation and press-fit design.</p>
+      <a href="https://github.com/ownobrn">View project →</a>
+    </div>
+
+    <div class="card">
+      <h3>Procedural Lampshade</h3>
+      <p>OpenSCAD lattice generator optimized for 3D printing constraints.</p>
+      <a href="https://github.com/ownobrn">View project →</a>
+    </div>
+
+    <div class="card">
+      <h3>Robotics Simulation</h3>
+      <p>Planar manipulator kinematics and control analysis in MATLAB.</p>
+      <a href="#">View project →</a>
+    </div>
+
+  </div>
+</section>
+
+<section>
+  <h2>About</h2>
+  <p>
+    Master’s student in Mechanical Engineering at Columbia University.
+    Focused on mechanical design, manufacturing systems, and computational tools.
+  </p>
+</section>
+
+<section>
+  <h2>Contact</h2>
+
+  <div style="display:flex; gap:20px; flex-wrap:wrap;">
+
+    <a href="mailto:ojo2011@columbia.edu" class="btn">
+      <i class="fa-solid fa-envelope"></i> Email
+    </a>
+
+    <a href="https://github.com/ownobrn" target="_blank" class="btn">
+      <i class="fa-brands fa-github"></i> GitHub
+    </a>
+
+    <a href="www.linkedin.com/in/obrien-owen/" target="_blank" class="btn">
+      <i class="fa-brands fa-linkedin"></i> LinkedIn
+    </a>
+
+  </div>
+</section>
+
+<footer>
+  © 2026 Owen O’Brien
+</footer>
 
 </body>
 </html>
