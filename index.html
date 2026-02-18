@@ -3,47 +3,395 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Owen O’Brien | Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="description" content="Owen O'Brien — Mechanical Engineering portfolio" />
+  <title>Owen O'Brien | Mechanical Engineering</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg: #0b1020;
+      --panel: rgba(255,255,255,.06);
+      --panel-2: rgba(255,255,255,.10);
+      --text: rgba(255,255,255,.92);
+      --muted: rgba(255,255,255,.70);
+      --faint: rgba(255,255,255,.55);
+      --line: rgba(255,255,255,.12);
+      --shadow: 0 16px 50px rgba(0,0,0,.45);
+      --radius: 18px;
+      --accent1: #77B6FF;
+      --accent2: #B097FF;
+      --accent3: #62FFD2;
+      --max: 1100px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(1200px 800px at 15% 10%, rgba(119,182,255,.25), transparent 60%),
+        radial-gradient(900px 700px at 85% 25%, rgba(176,151,255,.18), transparent 55%),
+        radial-gradient(900px 700px at 35% 90%, rgba(98,255,210,.10), transparent 55%),
+        linear-gradient(180deg, #060913, var(--bg));
+      overflow-x:hidden;
+    }
+
+    a{color:inherit; text-decoration:none}
+    a:hover{opacity:.92}
+
+    .wrap{max-width:var(--max); margin:0 auto; padding:28px 22px 70px}
+
+    /* Top nav */
+    .topbar{
+      position:sticky; top:0; z-index:5;
+      backdrop-filter: blur(12px);
+      background: linear-gradient(180deg, rgba(6,9,19,.78), rgba(6,9,19,.35));
+      border-bottom: 1px solid var(--line);
+    }
+    .topbar-inner{
+      max-width:var(--max); margin:0 auto;
+      padding:14px 22px;
+      display:flex; align-items:center; justify-content:space-between; gap:16px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:12px; font-weight:700; letter-spacing:.2px;
+    }
+    .dot{
+      width:12px; height:12px; border-radius:999px;
+      background: linear-gradient(135deg, var(--accent1), var(--accent2));
+      box-shadow: 0 0 0 6px rgba(119,182,255,.10);
+    }
+    .nav{
+      display:flex; gap:14px; align-items:center; flex-wrap:wrap;
+      color:var(--muted); font-weight:600; font-size:14px;
+    }
+    .nav a{
+      padding:9px 12px;
+      border-radius:999px;
+      border:1px solid transparent;
+    }
+    .nav a:hover{
+      border-color: var(--line);
+      background: rgba(255,255,255,.04);
+      color: var(--text);
+    }
+
+    /* Hero */
+    .hero{
+      padding:46px 0 22px;
+      display:grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap:22px;
+      align-items:stretch;
+    }
+    @media (max-width: 900px){
+      .hero{grid-template-columns:1fr; padding-top:28px}
+    }
+
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.05));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .hero-main{padding:26px}
+    .kicker{
+      display:inline-flex; align-items:center; gap:10px;
+      font-size:13px; font-weight:700; letter-spacing:.22em;
+      text-transform:uppercase; color:var(--muted);
+    }
+    .kicker::before{
+      content:"";
+      width:10px; height:10px; border-radius:999px;
+      background: linear-gradient(135deg, var(--accent3), var(--accent1));
+      box-shadow: 0 0 0 6px rgba(98,255,210,.08);
+    }
+    h1{
+      margin:14px 0 8px;
+      font-size: clamp(34px, 4.3vw, 54px);
+      line-height:1.05;
+      letter-spacing:-.03em;
+    }
+    .subtitle{
+      margin:0 0 18px;
+      color:var(--muted);
+      font-size:16px;
+      line-height:1.6;
+      max-width:60ch;
+    }
+    .chips{
+      display:flex; flex-wrap:wrap; gap:10px;
+      margin:18px 0 22px;
+    }
+    .chip{
+      font-size:13px; color:var(--faint);
+      padding:9px 12px;
+      border-radius:999px;
+      background: rgba(255,255,255,.05);
+      border:1px solid var(--line);
+    }
+    .cta{
+      display:flex; gap:12px; flex-wrap:wrap; align-items:center;
+      margin-top:8px;
+    }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      padding:12px 14px;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.05);
+      color: var(--text);
+      font-weight:700;
+      font-size:14px;
+      transition: transform .12s ease, background .12s ease, border-color .12s ease;
+    }
+    .btn:hover{transform: translateY(-1px); background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.18)}
+    .btn.primary{
+      border-color: transparent;
+      background: linear-gradient(135deg, rgba(119,182,255,.95), rgba(176,151,255,.95));
+      color:#071021;
+    }
+    .btn.primary:hover{filter: brightness(1.03)}
+    .btn .icon{width:16px; height:16px; display:inline-block}
+
+    /* Sidebar card */
+    .hero-side{padding:20px}
+    .mini-title{font-weight:800; letter-spacing:.2px; margin:0 0 10px}
+    .mini{
+      display:grid; gap:10px;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.45;
+    }
+    .row{
+      padding:12px 12px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      display:flex; justify-content:space-between; gap:12px; align-items:center;
+    }
+    .row strong{color:var(--text); font-weight:700}
+    .row a{color:var(--text); font-weight:700}
+    .row a:hover{text-decoration:underline}
+
+    /* Sections */
+    section{margin-top:28px}
+    .section-head{
+      display:flex; align-items:flex-end; justify-content:space-between; gap:14px;
+      margin-bottom:12px;
+    }
+    h2{
+      margin:0;
+      font-size:18px;
+      letter-spacing:-.01em;
+    }
+    .hint{color:var(--muted); font-size:13px}
+
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:14px;
+    }
+    @media (max-width: 980px){.grid{grid-template-columns: repeat(2, 1fr)}}
+    @media (max-width: 640px){.grid{grid-template-columns: 1fr}}
+
+    .proj{
+      padding:16px;
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      transition: transform .12s ease, background .12s ease, border-color .12s ease;
+      min-height: 160px;
+      display:flex; flex-direction:column; gap:10px;
+    }
+    .proj:hover{transform: translateY(-2px); background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.18)}
+    .proj .tag{
+      display:inline-flex; align-items:center;
+      font-size:12px; font-weight:800; letter-spacing:.12em;
+      text-transform:uppercase;
+      color:rgba(255,255,255,.75);
+    }
+    .proj h3{margin:0; font-size:16px; letter-spacing:-.01em}
+    .proj p{margin:0; color:var(--muted); font-size:14px; line-height:1.5}
+    .proj .meta{
+      margin-top:auto;
+      display:flex; gap:10px; flex-wrap:wrap;
+      color: var(--faint);
+      font-size:12px;
+    }
+
+    /* Footer */
+    footer{
+      margin-top:34px;
+      padding-top:18px;
+      border-top:1px solid var(--line);
+      color:var(--muted);
+      font-size:13px;
+      display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap;
+    }
+    .smalllinks{display:flex; gap:12px; flex-wrap:wrap}
+    .smalllinks a{color:var(--muted)}
+    .smalllinks a:hover{color:var(--text)}
+  </style>
 </head>
 
-<body class="bg-home">
-  <header class="nav">
-    <a class="brand" href="index.html">Owen O’Brien</a>
-    <nav class="nav-links">
-      <a href="about.html">About Me</a>
-      <a href="projects.html">Projects</a>
-      <a href="goals.html">Goals</a>
-    </nav>
-  </header>
+<body>
+  <div class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <span class="dot" aria-hidden="true"></span>
+        <span>Owen O’Brien</span>
+      </div>
+      <nav class="nav" aria-label="Primary">
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+        <a href="#goals">Goals</a>
+        <!-- Optional: add a resume PDF at /resume.pdf -->
+        <a href="resume.pdf">Resume</a>
+      </nav>
+    </div>
+  </div>
 
-  <main class="hero-wrap">
-    <section class="hero glass">
-      <div class="badge">Columbia University · Portfolio</div>
-      <h1 class="hero-title">Owen O’Brien</h1>
-      <p class="hero-subtitle">Master's Student In Mechanical Engineering</p>
+  <main class="wrap">
+    <div class="hero">
+      <div class="card hero-main">
+        <div class="kicker">Mechanical Engineering</div>
+        <h1>Building useful things<br/>with design + analysis.</h1>
+        <p class="subtitle">
+          M.S. Mechanical Engineering student at Columbia University. I like projects that blend
+          hands-on prototyping with solid modeling, simulation, and data-driven iteration.
+        </p>
 
-      <div class="cta-row">
-        <a class="btn" href="about.html">About Me</a>
-        <a class="btn primary" href="projects.html">View Projects</a>
-        <a class="btn" href="goals.html">Goals</a>
+        <div class="chips" aria-label="Highlights">
+          <span class="chip">CAD (SolidWorks / Onshape)</span>
+          <span class="chip">FEA + mechanics</span>
+          <span class="chip">Python / MATLAB</span>
+          <span class="chip">Prototyping + fabrication</span>
+        </div>
+
+        <div class="cta">
+          <a class="btn primary" href="#projects">
+            <span class="icon" aria-hidden="true">↳</span> View projects
+          </a>
+          <a class="btn" href="mailto:ojo2011@columbia.edu">
+            <span class="icon" aria-hidden="true">✉</span> Email
+          </a>
+          <a class="btn" href="https://www.linkedin.com/in/obrien-owen/" target="_blank" rel="noopener">
+            <span class="icon" aria-hidden="true">in</span> LinkedIn
+          </a>
+          <a class="btn" href="https://github.com/ownobrn" target="_blank" rel="noopener">
+            <span class="icon" aria-hidden="true">⌂</span> GitHub
+          </a>
+        </div>
       </div>
 
-      <div class="contact-row">
-        <a href="mailto:ojo2011@columbia.edu">ojo2011@columbia.edu</a>
-        <span class="dot">•</span>
-        <a href="https://www.linkedin.com/in/obrien-owen/" target="_blank" rel="noopener">LinkedIn</a>
-        <span class="dot">•</span>
+      <aside class="card hero-side">
+        <h3 class="mini-title">Quick info</h3>
+        <div class="mini">
+          <div class="row">
+            <span>School</span>
+            <strong>Columbia University</strong>
+          </div>
+          <div class="row">
+            <span>Focus</span>
+            <strong>Design • Mechanics • Prototyping</strong>
+          </div>
+          <div class="row">
+            <span>Location</span>
+            <strong>New York, NY</strong>
+          </div>
+          <div class="row">
+            <span>Contact</span>
+            <a href="mailto:youremail@columbia.edu">youremail@columbia.edu</a>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <section id="projects">
+      <div class="section-head">
+        <h2>Featured projects</h2>
+        <div class="hint">Click a card to link to a page/repo.</div>
+      </div>
+
+      <div class="grid">
+        <a class="proj" href="#" aria-label="Project 1">
+          <div class="tag">Design</div>
+          <h3>Laser-cut press-fit box generator</h3>
+          <p>Parametric SVG generation with kerf + clearance tuning for reliable assembly.</p>
+          <div class="meta">
+            <span>Python</span><span>Manufacturing</span><span>DFM</span>
+          </div>
+        </a>
+
+        <a class="proj" href="#" aria-label="Project 2">
+          <div class="tag">Research</div>
+          <h3>Terahertz imaging (IMEP-LAHC)</h3>
+          <p>Experiment + analysis workflow for imaging/measurement in a lab setting.</p>
+          <div class="meta">
+            <span>Data analysis</span><span>Instrumentation</span>
+          </div>
+        </a>
+
+        <a class="proj" href="#" aria-label="Project 3">
+          <div class="tag">Biomechanics</div>
+          <h3>Canine partial limb prosthetic</h3>
+          <p>Iterative CAD + prototyping to improve fit, comfort, and alignment.</p>
+          <div class="meta">
+            <span>CAD</span><span>Prototyping</span><span>Design iteration</span>
+          </div>
+        </a>
       </div>
     </section>
+
+    <section id="about">
+      <div class="section-head">
+        <h2>About</h2>
+        <div class="hint">2–3 lines is enough; keep it skimmable.</div>
+      </div>
+      <div class="card" style="padding:18px">
+        <p style="margin:0; color:var(--muted); line-height:1.7">
+          I’m a Mechanical Engineering master’s student focused on turning ideas into working prototypes,
+          then improving them with analysis and iteration. I enjoy hands-on builds, clean CAD, and getting
+          measurable performance improvements.
+        </p>
+      </div>
+    </section>
+
+    <section id="goals">
+      <div class="section-head">
+        <h2>Goals</h2>
+        <div class="hint">What you’re looking for right now.</div>
+      </div>
+      <div class="card" style="padding:18px">
+        <ul style="margin:0; padding-left:18px; color:var(--muted); line-height:1.8">
+          <li>Summer internship in mechanical design / manufacturing / R&amp;D</li>
+          <li>Build a stronger portfolio of fabrication + analysis case studies</li>
+          <li>Work on projects with real constraints and real users</li>
+        </ul>
+      </div>
+    </section>
+
+    <footer>
+      <div>© <span id="year"></span> Owen O’Brien</div>
+      <div class="smalllinks">
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+        <a href="#goals">Goals</a>
+      </div>
+    </footer>
   </main>
 
-  <footer class="footer">
-    © 2026 Owen O’Brien
-  </footer>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
-
 
 
 
