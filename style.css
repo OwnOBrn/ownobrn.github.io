@@ -1,1 +1,63 @@
+body {
+  margin: 0;
+  overflow: hidden;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  background: black;
+  color: white;
+}
+
+#bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.overlay {
+  position: absolute;
+  top: 35%;
+  width: 100%;
+  text-align: center;
+  z-index: 10;
+}
+
+.title {
+  font-size: 60px;
+  margin-bottom: 30px;
+  animation: fadeIn 2s ease;
+}
+
+.menu a {
+  display: inline-block;
+  margin: 10px 20px;
+  font-size: 22px;
+  color: #38bdf8;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+
+.menu a:hover {
+  transform: scale(1.2);
+}
+
+.contact {
+  margin-top: 30px;
+  font-size: 16px;
+}
+
+.contact a {
+  display: block;
+  color: #94a3b8;
+  text-decoration: none;
+  margin-top: 6px;
+}
+
+.contact a:hover {
+  color: white;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 
